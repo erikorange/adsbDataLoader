@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adsbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DataFile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="adsbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DataFiles" EntityType="Self.DataFile" />
+    <EntitySet Name="ModeS" EntityType="adsbModel.ModeS" />
+  </EntityContainer>
+  <EntityType Name="ModeS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="icao_id" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="callsign" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="altitude" Type="Int32" />
+    <Property Name="gndspeed" Type="Int32" />
+    <Property Name="gndtrack" Type="Int32" />
+    <Property Name="lat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="lon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="vrate" Type="Int32" />
+    <Property Name="squawk" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" Precision="3" />
+    <Property Name="timestampDate" Type="DateTime" Precision="3" />
+    <Property Name="timestampTime" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

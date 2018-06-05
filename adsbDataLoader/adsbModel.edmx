@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="adsbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DataFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="filename" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ModeS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icao_id" Type="nvarchar" MaxLength="6" />
+          <Property Name="callsign" Type="nvarchar" MaxLength="20" />
+          <Property Name="altitude" Type="int" />
+          <Property Name="gndspeed" Type="int" />
+          <Property Name="gndtrack" Type="int" />
+          <Property Name="lat" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="lon" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="vrate" Type="int" />
+          <Property Name="squawk" Type="int" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="timestampDate" Type="datetime" />
+          <Property Name="timestampTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="adsbModelStoreContainer">
+          <EntitySet Name="DataFile" EntityType="Self.DataFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModeS" EntityType="Self.ModeS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="adsbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DataFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="filename" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="adsbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DataFiles" EntityType="Self.DataFile" />
+          <EntitySet Name="ModeS" EntityType="adsbModel.ModeS" />
+        </EntityContainer>
+        <EntityType Name="ModeS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icao_id" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="callsign" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="altitude" Type="Int32" />
+          <Property Name="gndspeed" Type="Int32" />
+          <Property Name="gndtrack" Type="Int32" />
+          <Property Name="lat" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="lon" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="vrate" Type="Int32" />
+          <Property Name="squawk" Type="Int32" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="timestampDate" Type="DateTime" Precision="3" />
+          <Property Name="timestampTime" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="adsbModelStoreContainer" CdmEntityContainer="adsbEntities">
+          <EntitySetMapping Name="DataFiles">
+            <EntityTypeMapping TypeName="adsbModel.DataFile">
+              <MappingFragment StoreEntitySet="DataFile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModeS">
+            <EntityTypeMapping TypeName="adsbModel.ModeS">
+              <MappingFragment StoreEntitySet="ModeS">
+                <ScalarProperty Name="timestampTime" ColumnName="timestampTime" />
+                <ScalarProperty Name="timestampDate" ColumnName="timestampDate" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="squawk" ColumnName="squawk" />
+                <ScalarProperty Name="vrate" ColumnName="vrate" />
+                <ScalarProperty Name="lon" ColumnName="lon" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="gndtrack" ColumnName="gndtrack" />
+                <ScalarProperty Name="gndspeed" ColumnName="gndspeed" />
+                <ScalarProperty Name="altitude" ColumnName="altitude" />
+                <ScalarProperty Name="callsign" ColumnName="callsign" />
+                <ScalarProperty Name="icao_id" ColumnName="icao_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

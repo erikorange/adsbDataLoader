@@ -1,0 +1,11 @@
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\adsbDataLoader.exe.config
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\adsbDataLoader.exe
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\adsbDataLoader.pdb
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\obj\Debug\adsbDataLoader.csprojResolveAssemblyReference.cache
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\obj\Debug\adsbDataLoader.csproj.CoreCompileInputs.cache
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\obj\Debug\adsbDataLoader.exe
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\obj\Debug\adsbDataLoader.pdb
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\EntityFramework.dll
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\EntityFramework.xml
+C:\Users\Erik\Source\adsbDataLoader\adsbDataLoader\bin\Debug\EntityFramework.SqlServer.xml

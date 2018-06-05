@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="adsbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DataFile">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filename" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icao_id" Type="nvarchar" MaxLength="6" />
+    <Property Name="callsign" Type="nvarchar" MaxLength="20" />
+    <Property Name="altitude" Type="int" />
+    <Property Name="gndspeed" Type="int" />
+    <Property Name="gndtrack" Type="int" />
+    <Property Name="lat" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="lon" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="vrate" Type="int" />
+    <Property Name="squawk" Type="int" />
+    <Property Name="timestamp" Type="datetime" />
+    <Property Name="timestampDate" Type="datetime" />
+    <Property Name="timestampTime" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="adsbModelStoreContainer">
+    <EntitySet Name="DataFile" EntityType="Self.DataFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModeS" EntityType="Self.ModeS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
